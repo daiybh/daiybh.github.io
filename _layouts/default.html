@@ -4,18 +4,31 @@
   <body>
     {% include nav.html %}
 
-    <div id="main" role="main" class="container">
-      {{ content }}
-    </div>
+    {% if page.toc==true %}
+      <aside class="toc">
+        {% include toc.html html=content %}
+      </aside>
+    {% endif %}
 
-    <div class="wrapper-footer">
+    <div id="main" role="main" class="wrapper-content">
       <div class="container">
-        <footer class="footer">
-          {% include footer.html %}
-        </footer>
+        {{ content }}
       </div>
     </div>
 
     {% include analytics.html %}
   </body>
+
+  {% if page.toc==true %}
+  <script>
+    document.getElementById("main").classList.add("withtoc");
+  </script>
+  {% endif %}
+
+  <div class="wrapper-footer-mobile">
+    <footer class="footer">
+      {% include footer.html %}
+    </footer>
+
+
 </html>
