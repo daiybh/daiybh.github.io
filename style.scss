@@ -8,7 +8,6 @@
 @import "reset";
 @import "open-color";
 @import "variables";
-
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -20,15 +19,15 @@ html {
 }
 
 body {
-  font-family: $base-font;
+  font-family: $text-font;
   color: $base-color;
   line-height: 1.7em;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 1000px;
-  padding: 0 20px;
+  max-width: 800px;
+  padding: 0 16px;
   width: 100%;
 }
 
@@ -36,9 +35,10 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 2em;
   margin: 1em 0 16px;
   padding: 0;
+  font-family: $title-font;
 
   @include mobile {
-    line-height: 1.6em;
+    line-height: 1.7em;
   }
 }
 
@@ -67,26 +67,22 @@ h4 {
 }
 
 h6 {
+  font-size: 18px;
   color: $base-lighten-color;
 }
 
 p {
   color: $text-color;
-  margin: 1em 0;
+  margin: 15px 0;
+  font-family: $text-font;
 }
 
 a {
   color: $link-color;
   text-decoration: none;
   cursor: pointer;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-
   &:hover, &:active {
-    color: $link-lighten-color;
+    color: $link-color;
   }
 }
 
@@ -180,7 +176,6 @@ dt {
   float: left;
   width: $dt-width;
   overflow: auto;
-  -webkit-overflow-scrolling: touch;
   clear: left;
   text-align: right;
   white-space: nowrap;
@@ -266,7 +261,7 @@ a.footnote {
 img {
   display: block;
   max-width: 100%;
-  margin: 0 0 1em;
+  margin: 0 auto 1em;
   border-radius: 5px;
 }
 
@@ -277,11 +272,11 @@ img {
 
 // Specify the color of the selection
 ::-moz-selection {
-//  color: $selection-color;
+  color: $selection-color;
   background: $selection-background-color;
 }
 ::selection {
-//  color: $selection-color;
+  color: $selection-color;
   background: $selection-background-color;
 }
 
@@ -316,42 +311,27 @@ img {
 /*********************/
 
 //
-// .sidebar
+// .masthead
 //
 
-.wrapper-sidebar {
-  width: 30%;
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-color: $background-color;
-	height: 100%;
-	top: 0;
-	left:0;
-	position: fixed;
-	z-index: 4;
-  border-right: 1px solid $divider-color;
-
-  @include mobile {
-    width: 100%;
-    height: auto;
-    padding-bottom: 24px;
-    position: relative;
-    border-bottom: 1px solid $divider-color;
-    border-right: 0;
-  }
+.wrapper-masthead {
+  margin-bottom: 40px;
 }
 
-.sidebar {
-  padding: 20px 0;
+.masthead {
+  padding: 20px 0 10px;
 
   @include mobile {
     text-align: center;
   }
 }
 
-.site-info {
-  text-align:center;
-  margin: 100px auto 0;
+.site-avatar {
+  display: block;
+  margin:0 auto;
+  float: none;
+  width: auto;
+  height: auto;
 
   @include mobile {
     float: none;
@@ -359,62 +339,68 @@ img {
     margin: 0 auto;
   }
 
-  .site-avatar {
-    margin:0 auto;
+  img {
+    margin: 0 auto;
+  }
+}
+
+.site-info {
+  float: none;
+  border-top: 1px solid $oc-gray-7;
+  border-bottom: 1px solid $oc-gray-7;
+  margin: 20px -60px 0;
+  padding: 0 60px;
+
+  @include mobile {
+    float: none;
     display: block;
-    max-width: 200px;
-    max-height: 200px;
-
-    @include mobile {
-      max-width: 120px;
-      max-height: 120px;
-    }
-
-    img {
-      display: inline-block;
-      border-radius: 2px;
-    }
+    margin: 0 auto;
+    padding: 0 auto;
   }
 }
 
 .site-name {
-  margin: 0 auto;
-  color: $base-color;
+  display:inline-block;
+  margin: 5px 0 0;
+  color: $oc-gray-9;
   cursor: pointer;
-  font-family: $base-font;
-  font-weight: 700;
-  font-size: 28px;
+  font-family: $title-font;
+  font-weight: bold;
+  font-size: 24px;
   letter-spacing: 1px;
+  line-height: 40px;
 }
 
 .site-description {
-  margin: 15px auto;
-  color: $base-lighten-color;
+  margin: 0 0 0 12px;
+  color: $oc-gray-6;
   font-size: 16px;
+  display: inline-block;
+  line-height: 40px;
 
   @include mobile {
-    margin: 10px auto;
+    display: none;
   }
 }
 
-.navlist{
-  text-align:center;
-}
-
 nav {
-  display: block;
-  margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $base-font;
-  font-weight: 500;
+  float: right;
+  // margin-top: 23px; // @TODO: Vertically middle align
+  font-family: $title-font;
   font-size: 18px;
+  line-height: 40px;
+  margin-top: 6px;
 
   @include mobile {
+    float: none;
     margin-top: 9px;
+    display: block;
     font-size: 16px;
   }
 
   a {
-    margin: 0 10px;
+    margin-left: 20px;
+    color: $oc-gray-6;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
@@ -426,21 +412,77 @@ nav {
   }
 }
 
-// content
+// Posts
+.posts > .post {
+  padding-bottom: 2em;
+  border-bottom: 1px solid $divider-color;
+  min-height: 236px;
+  
+  .entry{
 
-.wrapper-content {
-  float: right;
-  width: 70%;
+    .title-image-thumb{
+      float: left;
+      width: 200px;
+      height: 120px;
+      border-radius: 5px;
+      overflow: hidden;
 
-  @include mobile {
-    float: none;
-    width: 100%;
+      img{
+        object-fit: cover;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      
+      @include mobile{
+        float: none;
+        width: 100%;
+        margin-top: 14px;
+      }
+    }
+
+    .summery{
+      margin-left: 216px;
+      @include mobile{
+        margin: 0;
+      }
+    }
+
   }
 }
 
-// Posts
+.posts > .post:last-child {
+  padding-bottom: 1em;
+  border-bottom: none;
+}
 
-.posts{
+.posts > .post h1 {
+    font-size: 24px;
+}
+
+.post {
+
+  .title-image{
+    margin-top: -24px;
+  }
+
+  h1 {
+    margin-bottom: .1em;
+  }
+
+  .author {
+    font-weight: bold;
+    font-size: 14px;
+    color: $base-lighten-color;
+    margin-right: 3px;
+  }
+
+  .date {
+    font-weight: 300;
+    font-size: $small-font-size;
+    color: $base-lighten-color;
+    margin-right: 3px;
+  }
 
   .tag {
     display: inline;
@@ -458,58 +500,12 @@ nav {
       > a {
         margin: 3px 3px 3px 0;
         padding: .5px 4px;
-        color: $base-color;
+        color: $tag-index-label-color;
         background-color: $tag-index-label-background-color;
         border-radius: 3px;
-
-        &:hover {
-          color: $link-color;
-          background-color:$link-bghv-color;
-        }
       }
     }
   }
-}
-
-.posts > .post {
-  padding-bottom: 2em;
-  border-bottom: 1px solid $divider-color;
-}
-
-.posts > .post:last-child {
-  padding-bottom: 1em;
-  border-bottom: none;
-}
-
-
-.pinned .feather-anchor {
-  color: $base-lighten-color;
-  padding: 2px;
-  margin-right: 8px;
-}
-
-
-.date {
-  font-weight: 300;
-  font-size: $small-font-size;
-  color: $base-lighten-color;
-  margin-right: 4px;
-}
-
-.author{
-  font-weight:700;
-  font-size:$small-font-size;
-  color: $base-lighten-color;
-  margin-right: 4px;
-}
-
-
-.post {
-
-  h1 {
-    margin-bottom: .1em;
-  }
-
 
   .comments {
     margin-top: 10px;
@@ -520,77 +516,23 @@ nav {
   }
 }
 
-.page {
-//  margin: 40px;
-
-  @include mobile {
-//    margin: 24px;
-  }
-}
-
-// TOC
-
-.toc {
-  width: 240px;
-  height: 100%;
-  left: 30%;
-  position: fixed;
-  z-index: 4;
-  padding: 60px 20px 0 20px;
-  overflow-y: auto;
-  
-  &:before{
-    content:"目录";
-    margin: 0 0 1em 1em;
-    font-weight: 700;
-    font-size: 1.2em;
-    display: block;
-    padding-bottom: 0.6em;
-    border-bottom: 3px double $divider-color;
-  }
-
-  li:before{
-    content:"";
-  }
-
-  @include mobile{
-    display:none;
-  }
-}
-
-@media screen and (max-width:2200px) and (min-width:1200px){
-  .withtoc{
-    padding-left: 260px;
-  }
-}
-
-// pagination
-
 .pagination {
-  border-top: 1px solid $divider-color;
   font-weight: 300;
-  padding: 40px 0;
+  padding: 2em 0;
   width: 100%;
   display: inline-block;
 
   @include mobile {
     font-size: $small-font-size;
-    padding: 24px 0;
   }
 
   > .prev {
     float: left;
     width: 50%;
     a {
-      color: $base-lighten-color;
-      border: 1px solid $divider-color;
-      padding: 10px 20px;
-      background: $background-color;
-
+      color: $pagination-color;
       &:hover, &:focus {
-        color: $link-lighten-color;
-        border: 1px solid $link-lighten-color;
-        background-color: $link-bghv-color;
+        color: $pagination-over-color;
       }
     }
   }
@@ -600,31 +542,57 @@ nav {
     text-align: right;
     width: 50%;
     a {
-      color: $base-lighten-color;
-      border: 1px solid $divider-color;
-      padding: 10px 20px;
-      background: $background-color;
-
+      color: $pagination-color;
       &:hover, &:focus {
-        color: $link-lighten-color;
-        border: 1px solid $link-lighten-color;
-        background-color: $link-bghv-color;
+        color: $pagination-over-color;
       }
     }
   }
 }
 
 // Archive
+ul.archive{
+  margin:0 -4px;
+}
+
 .archive {
-  a {
-    color: $base-color;
+  h2{
+    margin-left: 4px;
   }
-  time {
-    color: $base-lighten-color;
-    font-size: $small-font-size;
-    font-weight: 300;
-    margin-left: 3px;
+
+  li{
+    display: inline-grid;
+    width: 140px;
+    list-style-type: none;
+    height: 140px;
+    border: 1px solid $oc-gray-1;
+    margin: 6px 4px;
+    background: $oc-gray-0;
+
+    a{
+      color: $base-color;
+      padding: 8px;
+      height: 100px;
+      overflow: hidden;
+    }
+
+    time{
+      color: $base-lighten-color;
+      font-size: $small-font-size;
+      font-weight: 300;
+      padding: 8px;
+      }
   }
+
+  li:hover {
+    background: $oc-indigo-0;
+    border: 1px solid $link-color;
+  }
+
+  li:before {
+    display:none;
+  }
+
 }
 
 // Tags
@@ -642,13 +610,9 @@ nav {
     > a {
       display: inline-block;
       margin: 1px;
-      color: $base-color;
+      color: $tag-index-label-color;
       background-color: $tag-index-label-background-color;
       border-radius: 3px;
-
-      &:hover {
-        background-color: $link-bghv-color;
-      }
 
       span {
         float: left;
@@ -657,7 +621,6 @@ nav {
         &.count {
           background-color: $tag-index-count-background-color;
           border-radius: 0 3px 3px 0;
-
         }
       }
     }
@@ -676,33 +639,12 @@ nav {
   }
 }
 
-
-
 // Footer
-.wrapper-footer-desktop {
+.wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid $footer-border-color;
+//  border-bottom: 1px solid $footer-border-color;
   background-color: $footer-background-color;
-  position: absolute;
-  clear:both;
-  width:100%;
-  bottom:0;
-  
-  @include mobile {
-    display: none;
-  }
-
-}
-
-.wrapper-footer-mobile {
-  display: none;
-  
-  @include mobile {
-    display: block;
-    width: 100%;
-    border-top: 1px solid $footer-border-color;
-    background-color: $footer-background-color;
-  }
 }
 
 footer {
@@ -711,7 +653,6 @@ footer {
 
   p {
     font-size: $small-font-size;
-    color: $base-lighten-color;
   }
 
   .svg-icon {
@@ -727,13 +668,8 @@ footer {
     }
 
     svg {
-      height: 20px;
-      width: 20px;
-      fill: $base-lighten-color;
-      
-      &:hover {
-        fill: $link-lighten-color;
-      }
+      height: 30px;
+      width: 30px;
     }
 
     em {
@@ -753,6 +689,3 @@ footer {
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
-@import "gitalk";
-
-
