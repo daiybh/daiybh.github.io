@@ -3,13 +3,8 @@
 // VARIABLES
 //
 
-// 颜色使用opencolor https://yeun.github.io/open-color/
-// 主题色可选 red, pink, grape, violet, indigo, blue, cyan, teal, green, lime, yellow
-// 默认为teal，如果需要更换，可以直接将teal并替换成你想要的颜色，例如，查找teal，替换indigo，全部替换，保存，push，完成！
-
-
 // Colors
-$blue: $oc-teal-8;
+$blue: $oc-red-8;
 
 // Grays
 $black: #000;
@@ -25,7 +20,8 @@ $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
 
 // Fonts
-$base-font: "Noto Serif","PT Serif",source-han-serif-sc, "Source Han Serif SC", "Source Han Serif CN", "Source Han Serif TC", "Source Han Serif TW", "Source Han Serif","Songti SC", SimSon, serif;
+$title-font: Optima, 'Lucida Sans', source-han-serif-sc, "Source Han Serif SC", "Source Han Serif CN", "Source Han Serif TC", "Source Han Serif TW", "Source Han Serif", "STSong", "Songti SC", "SimSun", "Microsoft YaHei", sans-serif;
+$text-font: 'Open Sans','Helvetica Neue', Arial, 'Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei',sans-serif;
 $code-font: 'Menlo', 'Courier New', 'Monaco', 'Spoqa Han Sans', monospace;
 
 // Font sizes
@@ -35,18 +31,10 @@ $small-font-size: 14px;
 // Colors
 $base-color: $oc-gray-8;
 $base-lighten-color: $oc-gray-6;
-$base-lightener-color: $oc-gray-4;
-
-$background-color: $oc-gray-0;
-$background-lighten-color: hsla(210, 17%, 98%, 0.42);
 
 $text-color: $base-color;
-$link-color: $oc-teal-8;
-$link-lighten-color: $oc-teal-6;
-$link-bghv-color: $oc-teal-0;
+$link-color: $oc-indigo-7;
 $divider-color: $oc-gray-1;
-
-$error-color:$oc-red-8;
 
 $table-border-color: $oc-gray-2;
 $table-background-color: $oc-gray-1;
@@ -57,14 +45,18 @@ $blockquote-border-color: $oc-gray-3;
 $footnote-link-border-color: $oc-gray-1;
 $footnote-link-background-over-color: $oc-gray-1;
 
-// $selection-color: $oc-black;
-$selection-background-color: $oc-gray-3;
+$selection-color: $oc-black;
+$selection-background-color: $oc-gray-1;
 
+$pagination-color: $oc-gray-6;
+$pagination-over-color: $oc-gray-7;
+
+$tag-index-label-color: $base-color;
 $tag-index-label-background-color: $oc-gray-2;
-$tag-index-count-background-color: hsla(210, 7%, 56%, 0.102);
+$tag-index-count-background-color: $oc-gray-3;
 
-$footer-border-color: $oc-gray-2;
-$footer-background-color: $oc-gray-0;
+$footer-border-color: $oc-gray-5;
+$footer-background-color: $white;
 
 // List
 $li-bottom-space: 0.4em;
@@ -89,7 +81,7 @@ $dd-position: $dt-width+$dt-dd-space;
 
 // Mobile breakpoints
 @mixin mobile {
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 640px) {
     @content;
   }
 }
