@@ -1,12 +1,13 @@
 ---
 layout: post
 title: 在powershell 中自动设置vs编译环境
-date: 2019-07-24
+date: 2024-04-29
 Author: daiybh
 tags: [sample, document]
 comments: true
 ---
 
+在powershell 中自动设置vs编译环境
 
 # check if already have  the PROFILE
 
