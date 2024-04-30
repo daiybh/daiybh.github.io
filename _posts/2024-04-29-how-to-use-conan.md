@@ -46,7 +46,7 @@ let
 check if already add local conan-server
 
 
-    conan remte list
+    conan remote list
 
 
 if no:
