@@ -5,6 +5,7 @@ date: 2024-04-29
 Author: daiybh
 tags: [conan, document]
 comments: true
+toc: true
 ---
 
 **how to use conan in cpp**
@@ -12,7 +13,7 @@ comments: true
 testPorject [link](https://github.com/daiybh/conan-usage/)
 
 
-# Install Conan-server  and start
+## Install Conan-server  and start
 
     pip install conan-server
 
@@ -28,7 +29,7 @@ let
 */*@*/*: *
 ```
 
-# Create "mypkg" package
+## Create "mypkg" package
 
     mkdir mypkg && cd mypkg
 
@@ -40,7 +41,7 @@ let
 
 
 
-# upload "mypkg" package to conan-server
+## upload "mypkg" package to conan-server
 
 check if already add local conan-server
 
@@ -69,7 +70,7 @@ search again
 sucess.
 
 
-# clean local Cache
+## clean local Cache
 
     remove local cache
 
@@ -86,7 +87,7 @@ my_local_server
 	
 	
 
-# use "mypkg" from local "Conan-server"	
+## use "mypkg" from local "Conan-server"	
 
 goto the code folder
 
