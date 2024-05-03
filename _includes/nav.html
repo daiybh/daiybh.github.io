@@ -21,6 +21,12 @@
     </nav>
   </div>
 
+  {% if page.toc==true %}
+  <aside class="toc">
+    {% include toc.html html=content %}
+  </aside>
+{% endif %}
+
   <div class="wrapper-footer-desktop">
     <footer class="footer">
       {% include footer.html %}
