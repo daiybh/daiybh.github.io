@@ -15,6 +15,8 @@ testPorject [link](https://github.com/daiybh/conan-usage/)
 
 ## Install Conan-server  and start
 
+if need private packages for team or company  can do this .
+
     pip install conan-server
 
 
@@ -28,6 +30,18 @@ let
 
 */*@*/*: *
 ```
+
+
+## **Set the Profile before everything**
+
+this will affect  "C:\Users\xxx\.conan2\profiles\default"
+
+    conan profile detect --force
+
+if want change cppstd to 20  ,open the file change 
+    
+    compiler.version=20
+
 
 ## Create "mypkg" package
 
@@ -72,11 +86,12 @@ sucess.
 
 ## clean local Cache
 
-    remove local cache
+remove local cache
 
     conan remove "mypkg" --confim
+```
+conan search "mypkg"
 
-    conan search "mypkg"
 
 Found 1 pkg/version recipes matching mypkg in my_local_server
 conancenter
@@ -84,7 +99,7 @@ conancenter
 my_local_server
   mypkg
     mypkg/1.0
-	
+```	
 	
 
 ## use "mypkg" from local "Conan-server"	
