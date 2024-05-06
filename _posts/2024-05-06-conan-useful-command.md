@@ -5,6 +5,7 @@ date: 2024-05-06
 Author: daiybh
 tags: [conan,command, document]
 comments: true
+toc: true
 ---
 
 **Conan useful command**
@@ -52,6 +53,41 @@ if want change cppstd to 20  ,open the file change
 ## list local packages
 
     conan list "*"
+
+### list more detail for package
+
+* list the package from remote 
+
+    conan list loglib/1.5:* -r=nas
+
+* list the package from local
+
+    conan list loglib/1.5:*
+
+
+Result
+```
+nas
+  loglib
+    loglib/1.5
+      revisions
+        04f48a810f38e640feabe48b1938970b (2024-05-06 06:52:36 UTC)
+          packages
+            f923b2725de93dc70a9c66b3fa3ab195f893064c
+              info
+                settings
+                  arch: x86_64
+                  build_type: Debug
+                  compiler: msvc
+                  compiler.cppstd: 20
+                  compiler.runtime: dynamic
+                  compiler.runtime_type: Debug
+                  compiler.version: 193
+                  os: Windows
+                options
+                  shared: False
+                  unicode: True
+```
 
 ## search packages from remote
 

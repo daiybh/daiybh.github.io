@@ -38,9 +38,18 @@ this will affect  "C:\Users\xxx\.conan2\profiles\default"
 
     conan profile detect --force
 
-if want change cppstd to 20  ,open the file change 
+
+set cppstd=20
+
+    conan profile update settings.compiler.version=20 default 
+
+also can by manual 
+
+open the file change 
     
     compiler.version=20
+
+
 
 
 ## Create "mypkg" package
