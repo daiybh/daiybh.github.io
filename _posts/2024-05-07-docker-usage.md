@@ -23,13 +23,14 @@ toc: true
 
 例如，下面的命令输出一个 “Hello World”，之后终止容器。
 
-复制
-$ docker run ubuntu:18.04 /bin/echo 'Hello world'
-Hello world
+
+    docker run ubuntu:18.04 /bin/echo 'Hello world'
+    Hello world
+
 这跟在本地直接执行 /bin/echo 'hello world' 几乎感觉不出任何区别。
 
 下面的命令则启动一个 bash 终端，允许用户进行交互。
 
-复制
-$ docker run -t -i ubuntu:18.04 /bin/bash
-root@af8bae53bdd3:/#
+
+    docker run -t -i ubuntu:18.04 /bin/bash
+    root@af8bae53bdd3:/#
