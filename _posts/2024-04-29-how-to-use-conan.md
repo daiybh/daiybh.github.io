@@ -97,7 +97,7 @@ sucess.
 
 remove local cache
 
-    conan remove "mypkg" --confim
+    conan remove "mypkg" --confirm
 ```
 conan search "mypkg"
 
