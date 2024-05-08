@@ -13,14 +13,20 @@ toc: true
 testPorject [link](https://github.com/daiybh/conan-usage/)
 
 
-## Install Conan-server  and start
+# Install Conan-server  and start
+
+the official  [link](https://docs.conan.io/2/reference/conan_server.html) 
 
 if need private packages for team or company  can do this .
 
     pip install conan-server
 
+## Configuration
 
-modify C:\Users\daili\.conan_server\server.conf
+default server configuration is ~/.conan_server/server.conf
+
+
+### give write permissions
 
 line:62  remove the "#"  
 
@@ -31,10 +37,25 @@ let
 */*@*/*: *
 ```
 
+### change the user name
 
-## **Set the Profile before everything**
+the default user is demo, so need change it to others
 
-this will affect  "C:\Users\xxx\.conan2\profiles\default"
+[users]
+demo:demo
+
+# Install client
+
+the official [link](https://docs.conan.io/2/installation.html)
+
+you need 
+
+* python>=3.6
+* pip
+
+# **Set the Profile before everything**
+
+this will affect  "~/.conan2/profiles/default"
 
     conan profile detect --force
 
@@ -43,7 +64,7 @@ set cppstd=20
 
     conan profile update settings.compiler.version=20 default 
 
-also can by manual 
+also can by manually 
 
 open the file change 
     
@@ -52,7 +73,7 @@ open the file change
 
 
 
-## Create "mypkg" package
+# Create "mypkg" package
 
     mkdir mypkg && cd mypkg
 
@@ -64,7 +85,7 @@ open the file change
 
 
 
-## upload "mypkg" package to conan-server
+# upload "mypkg" package to conan-server
 
 check if already add local conan-server
 
@@ -93,7 +114,7 @@ search again
 sucess.
 
 
-## clean local Cache
+# clean local Cache
 
 remove local cache
 
@@ -111,7 +132,7 @@ my_local_server
 ```	
 	
 
-## use "mypkg" from local "Conan-server"	
+# use "mypkg" from local "Conan-server"	
 
 goto the code folder
 
