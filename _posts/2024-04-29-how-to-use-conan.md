@@ -51,7 +51,9 @@ the official [link](https://docs.conan.io/2/installation.html)
 you need 
 
 * python>=3.6
-* pip
+* pip / pip3
+
+    pip3 install conan
 
 # **Set the Profile before everything**
 
