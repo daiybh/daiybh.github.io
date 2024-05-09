@@ -62,14 +62,15 @@ this will affect  "~/.conan2/profiles/default"
 
 set cppstd=20
 
-    conan profile update settings.compiler.version=20 default 
-
-also can by manually 
-
 open the file change 
-    
-    compiler.version=20
 
+in windows
+
+    compiler.cppstd=20
+
+in linux
+
+    compiler.cppstd=gnu20
 
 
 
