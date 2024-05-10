@@ -14,7 +14,7 @@ toc: true
 
 但是这种模式需要频繁的操作，并且wsl IP 不好获取，
 
-所以强烈建议使用 **networkingMode=mirrored** 模式
+所以强烈建议使用 **networkingMode=mirrored** 模式 [官方配置](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconfig)
 
 
 # 问题
