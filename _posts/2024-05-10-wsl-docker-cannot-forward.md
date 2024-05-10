@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 外部机器访问wsl内的docker 服务
-date: 2024-05-09
+date: 2024-05-10
 Author: daiybh
-tags: [linux,systemctl]
+tags: [wsl,mirrored,docker]
 comments: true
 toc: true
 ---

@@ -137,15 +137,42 @@ my_local_server
 
 # use "mypkg" from local "Conan-server"	
 
+create app
+
+    conan new cmake_exe -d name=testApp -d version=1.0
+
 goto the code folder
 
-    conan install . --output-folder=build --build=missing -s build_type=Debug
-    conan install . --output-folder=build --build=missing -s build_type=Release
+install the library 
 
+* --build_type=Debug for debug and release 
+
+* --output-folder=build the output folder is "build"
+
+* --build=missing  if there don't have the library from conanserver then can build
+
+```
+    conan install . --output-folder=build --build=missing -s build_type=Debug
+
+    conan install . --output-folder=build --build=missing -s build_type=Release
+```
+
+* if in windows
+
+```    
     cmake --preset conan-default
+```
+
+* if in linux
+
+```
+    cmake --preset conan-release
+    cmake --preset conan-debug
+```
+
+compile it for debug and release
 
     cmake --build --preset="conan-release"
     
     cmake --build --preset="conan-debug"
-
 
