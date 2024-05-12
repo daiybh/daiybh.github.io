@@ -35,3 +35,6 @@ toc: true
     docker run --rm   --volume="$PWD:/srv/jekyll:Z"   --publish 10086:4000   jekyll/jekyll:3.8 jekyll serve
 
 
+
+
+可以参考完整的教程 [link](/2019/12/14/How-to-build-a-blog-with-github-pages/)
