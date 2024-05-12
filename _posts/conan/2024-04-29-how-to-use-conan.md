@@ -3,6 +3,7 @@ layout: post
 title: how to use conan in cpp
 categories: Conan
 keywords: conan, document
+tags: [conan, document]
 description: how to use conan in cpp
 ---
 
