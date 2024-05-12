@@ -10,6 +10,9 @@ keywords: Poster, ICRA
 This is the poster of my conference paper published on 2019 IEEE International Conference on Robotics and Automation (ICRA), Montreal, Canada. 
 Everyone is free to download the poster from [github](https://github.com/chauby/ICRA2019-Poster) and [pdf](/assets/pdf/ICRA2019-Poster.pdf) and we welcome everyone to contact us for more communications.
 
+
+<!--more-->
+
 ![ICRA2019-poster](/images/posts/conference/ICRA2019_poster_picture.png)
 
 ## Author information

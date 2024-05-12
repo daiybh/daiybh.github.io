@@ -9,6 +9,8 @@ comments: true
 
 在powershell 中自动设置vs编译环境
 
+<!--more-->
+
 # check if already have  the PROFILE
 
 ```Powershell

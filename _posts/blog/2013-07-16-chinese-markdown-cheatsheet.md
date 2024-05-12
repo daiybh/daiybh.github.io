@@ -12,6 +12,7 @@ toc: true
 
 [Markdown语法的完整文档在这里](http://daringfireball.net/projects/markdown/syntax)。下面整理的这些为了方便写博客时参考。
 
+<!--more-->
 ## 分段与分行
 
 以一个或多个空行来隔开段落；以两个或多个空格来段内换行。

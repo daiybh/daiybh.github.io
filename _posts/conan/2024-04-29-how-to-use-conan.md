@@ -1,22 +1,23 @@
 ---
 layout: post
 title: how to use conan in cpp
-date: 2024-04-29
 categories: Conan
 keywords: conan, document
 description: how to use conan in cpp
-comments: true
-toc: true
 ---
 
-## 简介
+this page is show "how to use conan in cpp "
 
-**how to use conan in cpp**
+<!--more-->
+## Introduce
+
+simply introduce for conan in cpp.
+
 
 testPorject [link](https://github.com/daiybh/conan-usage/)
 
 
-# Install Conan-server  and start
+## Install Conan-server  and start
 
 the official  [link](https://docs.conan.io/2/reference/conan_server.html) 
 
@@ -24,12 +25,12 @@ if need private packages for team or company  can do this .
 
     pip install conan-server
 
-## Configuration
+### Configuration
 
 default server configuration is ~/.conan_server/server.conf
 
 
-### give write permissions
+#### give write permissions
 
 line:62  remove the "#"  
 
@@ -40,14 +41,14 @@ let
 */*@*/*: *
 ```
 
-### change the user name
+#### change the user name
 
 the default user is demo, so need change it to others
 
 [users]
 demo:demo
 
-# Install client
+## Install client
 
 the official [link](https://docs.conan.io/2/installation.html)
 
@@ -58,7 +59,7 @@ you need
 
     pip3 install conan
 
-# **Set the Profile before everything**
+## **Set the Profile before everything**
 
 this will affect  "~/.conan2/profiles/default"
 
@@ -79,7 +80,7 @@ in linux
 
 
 
-# Create "mypkg" package
+## Create "mypkg" package
 
     mkdir mypkg && cd mypkg
 
@@ -91,7 +92,7 @@ in linux
 
 
 
-# upload "mypkg" package to conan-server
+## upload "mypkg" package to conan-server
 
 check if already add local conan-server
 
@@ -120,7 +121,7 @@ search again
 sucess.
 
 
-# clean local Cache
+## clean local Cache
 
 remove local cache
 
@@ -138,7 +139,7 @@ my_local_server
 ```	
 	
 
-# use "mypkg" from local "Conan-server"	
+## use "mypkg" from local "Conan-server"	
 
 create app
 

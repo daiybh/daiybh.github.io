@@ -1,15 +1,14 @@
 ---
 layout: post
 title: 使用 docker-jekyll 创建pages
-date: 2024-05-11
-Author: daiybh
+categories: Blog
 tags: [jekyll,docker]
 comments: true
 toc: true
 ---
 
 **使用 docker-jekyll 创建pages**
-
+<!--more-->
 只能使用 **jekyll:3.8**  
 
 # 创建blog

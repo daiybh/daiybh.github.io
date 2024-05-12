@@ -10,6 +10,9 @@ toc: true
 
 # use systemctl in linux
 
+<!--more-->
+
+
 
 
 ## 新建  /etc/systemd/system/mystart.service
