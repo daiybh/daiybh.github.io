@@ -76,4 +76,4 @@ github: [metadata]
 
 
 # 输入Disqus shortname，即可添加评论区，请查阅文档，设置自己的disqus站点，不要继续使用我的站点loffer
-disqus: dx-github #shortname
+#disqus: dx-github #shortname
