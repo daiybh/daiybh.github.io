@@ -1,1 +1,1 @@
-bundle exec jekyll serve -P 4000 --watch 
+bundle exec jekyll serve -P 4000 --watch  --incremental --host 0.0.0.0 
