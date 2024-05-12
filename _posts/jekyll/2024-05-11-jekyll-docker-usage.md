@@ -2,6 +2,7 @@
 layout: post
 title: 使用 docker-jekyll 创建pages
 categories: jekyll
+author: otherGuys
 tags: [jekyll,docker]
 keywords: jekyll,docker,pages
 comments: true
