@@ -3,7 +3,7 @@ layout: post
 title: 如何在Windows平台上基于github搭建个人博客平台
 categories: jekyll
 description: 从零开始学习和搭建个人博客平台
-keywords: github，博客搭建，github.io
+keywords: github，博客搭建，github.io,jekyll
 ---
 
 本文将介绍在Windows平台上搭建基于github pages 的个人博客网站的过程，以及利用Jekyll进行本地博客调试的过程，对于不懂前端的人来说是一个比较基础的入门教程。
