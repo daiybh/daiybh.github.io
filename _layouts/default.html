@@ -1,34 +1,13 @@
-<!DOCTYPE html>
-<html>
-  {% include head.html %}
-  <body>
-    {% include nav.html %}
+{% include header.html %}
+  {{ content }}
+{% include footer.html %}
 
-    {% if page.toc==true %}
-      <aside class="toc">
-        {% include toc.html html=content %}
-      </aside>
-    {% endif %}
-
-    <div id="main" role="main" class="wrapper-content">
-      <div class="container">
-        {{ content }}
-      </div>
-    </div>
-
-    {% include analytics.html %}
-  </body>
-
-  {% if page.toc==true %}
-  <script>
-    document.getElementById("main").classList.add("withtoc");
-  </script>
-  {% endif %}
-
-  <div class="wrapper-footer-mobile">
-    <footer class="footer">
-      {% include footer.html %}
-    </footer>
-
-
-</html>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
