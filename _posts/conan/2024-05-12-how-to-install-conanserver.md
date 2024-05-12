@@ -13,7 +13,9 @@ this document show how to install and configuration conan-server ,include use do
 
 <!--more-->
 
-# direct use conan-server
+# install
+
+## direct use conan-server
 
 the official  [link](https://docs.conan.io/2/reference/conan_server.html) 
 
@@ -32,7 +34,7 @@ or run in backend.
 or run with systemctl follow this [document](2024/05/09/linux-systemctl/)
 
 
-# run in docker
+## run in docker
 
 also we can run conan_server in docker 
 
@@ -57,7 +59,7 @@ so goto [Configuration](#configuration)
 
 **remeber after configuration ,need restart the server  or the container.**
 
-## Configuration
+# Configuration
 
 default server configuration is ~/.conan_server/server.conf
 
@@ -70,7 +72,7 @@ the folder struct is
 └── version.txt
 ```
 
-### give write permissions
+## give write permissions
 
 line:62  remove the "#"  
 
@@ -81,7 +83,7 @@ let
 */*@*/*: *
 ```
 
-### change the user name
+## change the user name
 
 the default user is demo, so need change it to others
 
