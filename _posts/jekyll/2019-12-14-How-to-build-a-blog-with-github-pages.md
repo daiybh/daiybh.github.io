@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 如何在Windows平台上基于github搭建个人博客平台
-categories: Blog
+categories: jekyll
 description: 从零开始学习和搭建个人博客平台
 keywords: github，博客搭建，github.io
 ---

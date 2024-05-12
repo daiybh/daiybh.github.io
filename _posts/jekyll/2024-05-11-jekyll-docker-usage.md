@@ -1,13 +1,15 @@
 ---
 layout: post
 title: 使用 docker-jekyll 创建pages
-categories: Blog
+categories: jekyll
 tags: [jekyll,docker]
+keywords: jekyll,docker,pages
 comments: true
 toc: true
 ---
 
-**使用 docker-jekyll 创建pages**
+使用 docker-jekyll 创建pages
+
 <!--more-->
 只能使用 **jekyll:3.8**  
 
