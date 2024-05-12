@@ -26,6 +26,9 @@ navs:
     href: /categories/
     label: Blogs
 
+  - 
+    href: /tags/
+    label: Tags
   -
     href: /wiki/
     label: Wiki
