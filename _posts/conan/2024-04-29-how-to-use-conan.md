@@ -2,7 +2,7 @@
 layout: post
 title: how to use conan in cpp
 date: 2024-04-29
-categories: Blog
+categories: Conan
 keywords: conan, document
 description: how to use conan in cpp
 comments: true
