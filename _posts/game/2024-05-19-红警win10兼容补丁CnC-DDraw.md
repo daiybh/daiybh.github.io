@@ -7,6 +7,10 @@ description: 红警2/尤里复仇win10兼容补丁CnC-DDraw，彻底解决无法
 keywords: 红警2
 ---
 
+红警2/尤里复仇win10兼容补丁CnC-DDraw，彻底解决无法运行和卡顿的问题
+
+<!--more-->
+
 此文为转载 [csdn](https://blog.csdn.net/w598753468/article/details/109689984)
 
 红警2年代过于久远，在Windows 10上无法直接正常运行，好在有热心开发者制作了兼容补丁，目前更新比较及时的是CnC-DDraw。
