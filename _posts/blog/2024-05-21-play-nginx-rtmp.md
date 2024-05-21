@@ -43,7 +43,7 @@ rtmp {
         }
         location /stat.xsl {
             # you can move stat.xsl to a different location
-            root /usr/build/nginx-rtmp-module;
+            root /etc/nginx;
         }
 
         # rtmp control
@@ -52,10 +52,17 @@ rtmp {
         }
 
 ```
+3、需要下载 [stat.xsl](https://github.com/arut/nginx-rtmp-module/blob/master/stat.xsl)  到 /etc/nginx ，
 
-3、配置完成后，检查配置是否正确：nginx -t 。
+这个目录是任意的，但是要注意权限问题。
 
-4、配置没有问题重启nginx：nginx -s reload
+直接指向 /etc/nginx/  ,并把该文件拷贝到/etc/nginx/ 即可
+
+4、配置完成后，检查配置是否正确：nginx -t 。
+
+5、配置没有问题重启nginx：nginx -s reload
+
+
 
 # 检查RTMP服务是否生效
 
