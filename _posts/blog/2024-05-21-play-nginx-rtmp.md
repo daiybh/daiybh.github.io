@@ -93,8 +93,16 @@ rtmp://10.134.64.142:1935/live/selftest
 
 ffmpeg -re -i +视频路径 -c copy -f flv +推流服务器地址
 
+循环播放文件 并推流 [参考文章](https://www.cnblogs.com/babosa/p/11123988.html)
 
-    ffmpeg -f gdigrab -framerate 30 -i desktop -c:v h264 -qp 0 -acodec aac -f flv rtmp://10.134.64.142:1935/live/abcd
+
+    ffmpeg -re -stream_loop -1 -i D:\Download\Video.mov -c:v h264 -b:v 100k -c:a aac -f flv  rtmp://10.134.64.142:1935/live/abcd
+
+采集当前桌面并推送流到服务器
+
+    ffmpeg -f gdigrab -framerate 30 -i desktop -c:v h264 -s 512x384 -b:v 500k -qp 0 -acodec aac -f flv rtmp://10.134.64.142:1935/live/abcd
+
+    
 
 4、浏览器的页面中的live streams出现如下则表示推流成功。
 
