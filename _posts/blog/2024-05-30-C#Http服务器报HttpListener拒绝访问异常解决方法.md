@@ -9,7 +9,7 @@ keywords: C#, http,拒绝访问
 # 问题描述： 
 
 在使用C#的System.Net.HttpListener进行客户端推送消息监听时，出现System.Net.HttpListenerException:“拒绝访问” 问题，现将解决方案记录一下，给遇到相同问题的朋友提供参考。
-
+<!--more-->
 # 具体代码：
 
 ```
