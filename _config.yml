@@ -72,7 +72,10 @@ simple_jekyll_search:
 # Analytics
 google:
     analytics_id: G-CH6ZLZ75VM
-github: [metadata]
+github: 
+    repository_count:10
+    sort_by:stars
+    sort_order:desc
 
 
 # 输入Disqus shortname，即可添加评论区，请查阅文档，设置自己的disqus站点，不要继续使用我的站点loffer
