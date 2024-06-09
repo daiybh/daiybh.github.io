@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Cuda 的warps、blocks、threads和grid关系
-date: 2024-05-12
+date: 2024-06-08
 categories: Cuda
 author: daiybh
 tags: cuda
