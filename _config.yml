@@ -72,6 +72,7 @@ simple_jekyll_search:
 # Analytics
 google:
     analytics_id: G-CH6ZLZ75VM
+    ads: true
 github: 
     [metadata]
 
