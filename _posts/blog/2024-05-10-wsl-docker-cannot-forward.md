@@ -38,15 +38,17 @@ toc: true
 
  [解决方案是](https://github.com/microsoft/WSL/issues/10494#issuecomment-1754170770)
 
-添加下面配置到wslconfig
+添加下面配置到 windows  "%USERPROFILE%/.wslconfig"
 
 
-    [experimental]
-    autoMemoryReclaim=gradual
+    
+    [wsl2]
     networkingMode=mirrored
     dnsTunneling=true
     firewall=false
     autoProxy=false
+
+    [Experimental]
     hostAddressLoopback=true
 
 
