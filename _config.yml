@@ -1,5 +1,5 @@
 baseurl:
-url: https://blog.hyman.store
+url: https://hyman.store
 logo: /assets/images/logo.png 
 title: Daiybh
 subtitle: "Stay hungry, stay foolish."
@@ -72,7 +72,9 @@ simple_jekyll_search:
 # Analytics
 google:
     analytics_id: G-CH6ZLZ75VM
-github: [metadata]
+    ads: true
+github: 
+    [metadata]
 
 
 # 输入Disqus shortname，即可添加评论区，请查阅文档，设置自己的disqus站点，不要继续使用我的站点loffer
