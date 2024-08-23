@@ -127,6 +127,9 @@ sucess.
 remove local cache
 
     conan remove "mypkg" --confirm
+
+## search package
+
 ```
 conan search "mypkg"
 
@@ -137,8 +140,8 @@ conancenter
 my_local_server
   mypkg
     mypkg/1.0
+
 ```	
-	
 
 ## use "mypkg" from local "Conan-server"	
 
