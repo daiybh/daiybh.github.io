@@ -100,6 +100,9 @@ nas
 
     conan search "loglib/1.0*"
 
+## remove packages from remote
+
+    conan remove "loglib/[<1.24]" -c
 
 # upload package to remote
 
