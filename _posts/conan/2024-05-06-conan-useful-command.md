@@ -105,3 +105,6 @@ nas
 
     conan upload loglib/1.3 -r=<your-remote-server-name>
 
+# Computing dependency graph
+
+    conan graph info . --format=html > graph.html
