@@ -15,6 +15,8 @@ tags: [nas, docker, mssql]
 
 不然 加上 -v   就会启动失败
 
+<!--more-->
+
 ```
 /opt/mssql/bin/permissions_check.sh: line 4: [: : integer expression expected
 /opt/mssql/bin/permissions_check.sh: line 59: [: : integer expression expected
