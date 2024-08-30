@@ -111,3 +111,11 @@ nas
 # Computing dependency graph
 
     conan graph info . --format=html > graph.html
+
+# compile the test_pacage
+
+chdir to the test_package folder
+
+then run the command
+
+    \slc-httplib\test_package> conan test . slc-httplib/1.24.35.1
