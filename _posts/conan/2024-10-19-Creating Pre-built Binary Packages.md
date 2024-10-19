@@ -65,7 +65,7 @@ self.cpp_info.libs = ["myhellolib"]
 
 * copy myhellolib/build/libmyhellolib.a to Prebuild_binaries/vendor_hello_library/macos/armv8/libmyhellolib.a
 
-* copy myhellolib/include/myhellolib.h to Prebuild_binaries/vendor_hello_library/macos/armv8/include
+* copy myhellolib/include/myhellolib.h to Prebuild_binaries/vendor_hello_library/macos/armv8/include/myhellolib.h
 
 ### Publish to  the  Conan Center
 
