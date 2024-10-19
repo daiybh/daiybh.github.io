@@ -17,9 +17,9 @@ To package pre-built binaries (such as .lib, .h) into a Conan package and publis
 <!--more-->
 # Reference:
 
-    [testPorject](https://github.com/daiybh/conan_test_prebuilt_binaries)
+* [testPorject](https://github.com/daiybh/conan_test_prebuilt_binaries)
 
-    [Conan Official Documentation: Creating Pre-built Binary Packages](https://docs.conan.io/2/tutorial/creating_packages/other_types_of_packages/package_prebuilt_binaries.html)
+* [Conan Official Documentation: Creating Pre-built Binary Packages](https://docs.conan.io/2/tutorial/creating_packages/other_types_of_packages/package_prebuilt_binaries.html)
 
 Assume we have a third-party library **myhellolib** that we want to use in our project.
 
