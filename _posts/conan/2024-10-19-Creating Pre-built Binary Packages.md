@@ -63,8 +63,9 @@ self.cpp_info.libs = ["myhellolib"]
 
 **NOTICE  my test os is macos armv8, you should change it according to your os**
 
-copy myhellolib/build/libmyhellolib.a to Prebuild_binaries/vendor_hello_library/macos/armv8/libmyhellolib.a
-copy myhellolib/include/myhellolib.h to Prebuild_binaries/vendor_hello_library/macos/armv8/include
+* copy myhellolib/build/libmyhellolib.a to Prebuild_binaries/vendor_hello_library/macos/armv8/libmyhellolib.a
+
+* copy myhellolib/include/myhellolib.h to Prebuild_binaries/vendor_hello_library/macos/armv8/include
 
 ### Publish to  the  Conan Center
 
