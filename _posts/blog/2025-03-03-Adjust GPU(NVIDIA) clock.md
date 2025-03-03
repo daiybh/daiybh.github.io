@@ -1,61 +1,60 @@
 ---
 layout: post
-title: Adjust GPU(NVIDIA) clock.
+title: Adjust GPU (NVIDIA) Clock.
 categories: [nvidia]
-description: Adjust GPU(NVIDIA) clock.
+description: Adjust GPU (NVIDIA) Clock.
 ---
 
-NVIDIA-SMI -lgc 和 -rgc 用法介绍
-NVIDIA 的 nvidia-smi（NVIDIA System Management Interface）提供了 -lgc 和 -rgc 选项，可以手动控制 GPU 的工作频率。
+## NVIDIA-SMI -lgc and -rgc Usage Guide
+
+NVIDIA's `nvidia-smi` (NVIDIA System Management Interface) provides the `-lgc` and `-rgc` options, allowing users to manually control GPU clock frequencies.
 
 <!--more-->
 
-
-在使用中发现 如果不调整 lgc  
-
-那么 以下代码会有不同的表现
+### **Observed Behavior Without Adjusting LGC**
+If the LGC setting is not adjusted, the following code exhibits different behaviors:
 
 ```cpp
-    void single_GPU(int gpuid) {
-	{
-		cudaSetDevice(gpuid);
-		int uyvy_size = 3840 * 2160 * 2;
-		uint8_t* pUyvy = new uint8_t[uyvy_size];
-		uint8_t* pGPU_uyvy;
-		cudaMalloc((void**)&pGPU_uyvy, uyvy_size);
-		cudaEvent_t start, stop;
-		cudaStream_t stream;
+void single_GPU(int gpuid) {
+    {
+        cudaSetDevice(gpuid);
+        int uyvy_size = 3840 * 2160 * 2;
+        uint8_t* pUyvy = new uint8_t[uyvy_size];
+        uint8_t* pGPU_uyvy;
+        cudaMalloc((void**)&pGPU_uyvy, uyvy_size);
+        cudaEvent_t start, stop;
+        cudaStream_t stream;
 
-		cudaEventCreate(&start);
-		cudaEventCreate(&stop);
-		cudaStreamCreate(&stream);
+        cudaEventCreate(&start);
+        cudaEventCreate(&stop);
+        cudaStreamCreate(&stream);
 
-		uint64_t g_loop = 0;
-		float elapsedTime = 0;
-		while (1) {
-			cudaEventRecord(start, stream);
+        uint64_t g_loop = 0;
+        float elapsedTime = 0;
+        while (1) {
+            cudaEventRecord(start, stream);
 
-			cudaMemcpy(pGPU_uyvy, pUyvy, uyvy_size, cudaMemcpyHostToDevice);
-			
-			cudaEventRecord(stop, stream);
-			cudaEventSynchronize(stop);
-			cudaEventElapsedTime(&elapsedTime, start, stop);
+            cudaMemcpy(pGPU_uyvy, pUyvy, uyvy_size, cudaMemcpyHostToDevice);
+            
+            cudaEventRecord(stop, stream);
+            cudaEventSynchronize(stop);
+            cudaEventElapsedTime(&elapsedTime, start, stop);
 
-			printf("%d>> %lld >> %2.2f\n",gpuid, g_loop++, elapsedTime);
-			Sleep(1000); 
-            //如果不加sleep 那么 elapsedTime 会在预期内
-            //如果加了sleep 那么 elapsedTime 会在预期外
-            // 如果调整了 LGC 那么 elapsedTime会变小
-		}
-	}
+            printf("%d>> %lld >> %2.2f\n", gpuid, g_loop++, elapsedTime);
+            Sleep(1000);
+            // If sleep is not added, elapsedTime remains as expected.
+            // If sleep is added, elapsedTime deviates from expectations.
+            // If LGC is adjusted, elapsedTime decreases.
+        }
+    }
 }
 ```
+
 <table>
 <tr>
-
 <td>
 <pre>
-如果加了 sleep,没有设置 LGC
+If sleep is added without setting LGC:
 
 0>> 0 >> 1.78
 0>> 1 >> 1.87
@@ -71,12 +70,10 @@ NVIDIA 的 nvidia-smi（NVIDIA System Management Interface）提供了 -lgc 和 
 0>> 11 >> 10.92
 0>> 12 >> 10.92
 0>> 13 >> 11.06
-
 </pre>
 </td><td>
-
 <pre>
-如果没有加 sleep
+If sleep is not added:
 
 0>> 4661 >> 1.64
 0>> 4662 >> 1.73
@@ -89,12 +86,10 @@ NVIDIA 的 nvidia-smi（NVIDIA System Management Interface）提供了 -lgc 和 
 0>> 4669 >> 1.65
 0>> 4670 >> 1.64
 0>> 4671 >> 1.66
-
 </pre>
-
 </td><td>
 <pre>
-如果调整了lgc  并加sleep
+If LGC is adjusted and sleep is added:
 
 0>> 0 >> 1.76
 0>> 1 >> 1.81
@@ -112,59 +107,62 @@ NVIDIA 的 nvidia-smi（NVIDIA System Management Interface）提供了 -lgc 和 
 0>> 13 >> 5.75
 0>> 14 >> 5.78
 </pre>
-
 </td></tr></table>
 
-# 1. nvidia-smi -lgc（锁定 GPU 频率）
+## **1. `nvidia-smi -lgc` (Lock GPU Clock Frequency)**
 
-命令格式：
+### **Command Format:**
+```
+nvidia-smi -lgc <min_clock>,<max_clock>
+```
+This command locks the GPU clock frequency within a specified range to prevent it from entering low-power mode or downclocking.
 
- 
-    nvidia-smi -lgc <min_clock>,<max_clock>
+### **Example:**
+```
+nvidia-smi -lgc 1000,2000
+```
+#### **Meaning:**
+- Ensures the GPU frequency remains within the **1000MHz ~ 2000MHz** range.
+- Prevents excessive downclocking or frequency fluctuations.
 
-该命令用于锁定 GPU 频率范围，避免 GPU 进入低功耗模式或降频。
-
-示例
- 
-    nvidia-smi -lgc 1000,2000
-
-含义：
-
-让 GPU 频率在 1000MHz ~ 2000MHz 之间运行，防止过低或过高的波动。
-查看 GPU 频率支持的范围
-
-    nvidia-smi -q -d SUPPORTED_CLOCKS
-
-输出示例：
-
+### **Check Supported Clock Ranges:**
+```
+nvidia-smi -q -d SUPPORTED_CLOCKS
+```
+#### **Example Output:**
 ```yaml
 Supported Clocks for GPU 00000000:01:00.0
 Memory Clocks MHz : 5001, 5500
 Graphics Clocks MHz : 300, 1000, 1500, 2000
 ```
-表示该 GPU 支持的频率范围为 300MHz 到 2000MHz。
+This means the GPU supports frequency ranges from **300MHz to 2000MHz**.
 
-# 2. nvidia-smi -rgc（恢复默认频率）
+---
+## **2. `nvidia-smi -rgc` (Restore Default Frequency)**
 
-命令格式：
+### **Command Format:**
+```
+nvidia-smi -rgc
+```
+This command restores the GPU to its **default dynamic clock adjustment mode**, removing the `-lgc` restriction.
 
-    nvidia-smi -rgc
+### **Example:**
+```
+nvidia-smi -rgc
+```
+#### **Meaning:**
+- Allows the GPU to dynamically adjust its frequency.
+- Restores the default **power-saving or performance mode** settings.
 
-该命令用于恢复 GPU 频率到默认的动态调节模式，取消 -lgc 限制。
+---
+## **3. `-lgc` and `-rgc` Use Cases**
 
-示例
-
-    nvidia-smi -rgc
-
-含义：
-
-让 GPU 重新允许动态调整频率，恢复默认的省电或性能模式。
-
-# 3. -lgc 和 -rgc 的适用情况
-
-|适用场景	|使用 -lgc	|使用 -rgc|
+| **Use Case** | **Use `-lgc`** | **Use `-rgc`** |
 |:---|:---|:---|
-|防止 GPU 过度降频（如 AI 训练、CUDA 计算）	|✅	|❌|
-|锁定稳定性能，避免频率波动	|✅	|❌|
-|恢复默认动态频率	|❌	|✅|
-|防止功耗限制影响计算	|✅	|❌|
+| Prevent excessive GPU downclocking (e.g., AI training, CUDA computing) | ✅ | ❌ |
+| Lock stable performance, avoid frequency fluctuations | ✅ | ❌ |
+| Restore default dynamic frequency adjustment | ❌ | ✅ |
+| Prevent power constraints from affecting performance | ✅ | ❌ |
+
+By using `nvidia-smi -lgc`, you can maintain stable GPU performance, and if needed, `nvidia-smi -rgc` restores the default settings.
+
