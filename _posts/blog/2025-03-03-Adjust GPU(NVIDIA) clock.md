@@ -54,10 +54,9 @@ NVIDIA 的 nvidia-smi（NVIDIA System Management Interface）提供了 -lgc 和 
 <tr>
 
 <td>
+<pre>
+如果加了 sleep,没有设置 LGC
 
-## 如果加了 sleep,没有设置 LGC
-
-```
 0>> 0 >> 1.78
 0>> 1 >> 1.87
 0>> 2 >> 1.97
@@ -72,11 +71,13 @@ NVIDIA 的 nvidia-smi（NVIDIA System Management Interface）提供了 -lgc 和 
 0>> 11 >> 10.92
 0>> 12 >> 10.92
 0>> 13 >> 11.06
-```
+
+</pre>
 </td><td>
 
-## 如果没有加 sleep
-```
+<pre>
+如果没有加 sleep
+
 0>> 4661 >> 1.64
 0>> 4662 >> 1.73
 0>> 4663 >> 1.65
@@ -88,12 +89,13 @@ NVIDIA 的 nvidia-smi（NVIDIA System Management Interface）提供了 -lgc 和 
 0>> 4669 >> 1.65
 0>> 4670 >> 1.64
 0>> 4671 >> 1.66
-```
+
+</pre>
 
 </td><td>
+<pre>
+如果调整了lgc  并加sleep
 
-## 如果调整了lgc  并加sleep
-```
 0>> 0 >> 1.76
 0>> 1 >> 1.81
 0>> 2 >> 1.81
@@ -109,7 +111,8 @@ NVIDIA 的 nvidia-smi（NVIDIA System Management Interface）提供了 -lgc 和 
 0>> 12 >> 5.74
 0>> 13 >> 5.75
 0>> 14 >> 5.78
-```
+</pre>
+
 </td></tr></table>
 
 # 1. nvidia-smi -lgc（锁定 GPU 频率）
