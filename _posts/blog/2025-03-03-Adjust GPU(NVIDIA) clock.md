@@ -127,7 +127,7 @@ nvidia-smi -lgc 1000,2000
 
 ### **Check Supported Clock Ranges:**
 ```
-nvidia-smi -q -d SUPPORTED_CLOCKS
+nvidia-smi -q -d CLOCK
 ```
 #### **Example Output:**
 ```yaml
