@@ -11,7 +11,7 @@ description: Useful Link.
 * [ffmpeg](https://wwkd.lanzouu.com/izspy310b7fi)
 * [spaceSinffer](https://wwkd.lanzouu.com/iCwen30ee8kf)
 
-* [goLancher](https://wwkd.lanzouu.com/iLqYQ341l07c)
+* [goLancher](https://wwkd.lanzouu.com/ihHOv341rdih)
 
 # From origin
 * [potplayer](https://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe)
