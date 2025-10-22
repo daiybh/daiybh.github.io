@@ -12,6 +12,8 @@ comments: true
 Windows 10从1709开始，默认在系统目录里带了OpenSSH客户端，这样对于开发人员就可以直接在cmd或者powershell上使用ssh命令。
 
 但是git-bash上也有一套相对独立的OpenSSH，两者的公钥私钥似乎不能统一管理，怎么办呢？
+
+参考文章 [page](https://blog.brian.pub/blog/openssh-on-windows.html)
 <!--more-->
 
 # 结论
