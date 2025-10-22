@@ -14,12 +14,7 @@ comments: true
 
 Always follow this page with success. [page](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases)
 
-## Mostly  need  run ssh-agent automatically when you open bash or Git shell.
-
-You can run ssh-agent automatically when you open bash or Git shell. Copy the following lines and paste them into your ~/.profile or ~/.bashrc file in Git shell:
-
-[https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows)
-
+## 统一管理Windows环境下的OpenSSH
 
 
 ## Enable the ssh-agent service on your Windows 10 box.
